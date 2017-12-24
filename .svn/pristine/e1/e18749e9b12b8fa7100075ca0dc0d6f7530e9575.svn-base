@@ -1,0 +1,4 @@
+jdbc.url=jdbc:mysql://120.78.156.148:3306/shop_datebase
+jdbc.driverClass=com.mysql.jdbc.Driver
+jdbc.username=root
+jdbc.password=123456
