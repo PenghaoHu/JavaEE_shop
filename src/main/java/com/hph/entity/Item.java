@@ -8,6 +8,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * 商品实体
+ * @author hupenghao
+ *
+ */
 @Entity(name = "t_item")
 public class Item implements Serializable {
 

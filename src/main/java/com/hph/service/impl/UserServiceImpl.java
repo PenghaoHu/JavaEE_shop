@@ -11,6 +11,11 @@ import com.hph.dao.UserDao;
 import com.hph.entity.User;
 import com.hph.service.UserService;
 
+/**
+ * 用户相关--服务层实现
+ * @author hupenghao
+ *
+ */
 @Service
 @Transactional
 public class UserServiceImpl implements UserService {

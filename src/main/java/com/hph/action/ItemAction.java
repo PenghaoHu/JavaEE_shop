@@ -16,6 +16,11 @@ import com.hph.service.ItemService;
 import com.hph.service.UserService;
 import com.opensymphony.xwork2.ActionSupport;
 
+/**
+ * 商品相关控制器
+ * 
+ * @author hupenghao
+ */
 public class ItemAction extends ActionSupport {
 
 	private static final long serialVersionUID = 1L;
@@ -97,7 +102,10 @@ public class ItemAction extends ActionSupport {
 	public void setId(String id) {
 		this.id = id;
 	}
-
+	/**
+	 * 添加商品
+	 * @return
+	 */
 	public String add() {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		HttpSession session = request.getSession();
@@ -114,7 +122,11 @@ public class ItemAction extends ActionSupport {
 		resultMap.put("result", "success");
 		return SUCCESS;
 	}
-
+	
+	/**
+	 * 获得所有商品
+	 * @return
+	 */
 	public String getAll() {
 		List<?> data = itemService.getAllItem();
 		resultMap = new HashMap<String, Object>();
@@ -123,7 +135,11 @@ public class ItemAction extends ActionSupport {
 		}
 		return SUCCESS;
 	}
-
+	
+	/**
+	 * 获得商品细节
+	 * @return
+	 */
 	public String getDetail() {
 		int itemid = Integer.valueOf(id);
 		resultMap = new HashMap<String, Object>();
@@ -135,7 +151,11 @@ public class ItemAction extends ActionSupport {
 		resultMap.put("itemUsername", item_username);
 		return SUCCESS;
 	}
-
+	
+	/**
+	 * 购买商品控制方法
+	 * @return
+	 */
 	public String buy() {
 		resultMap = new HashMap<String, Object>();
 		int itemid = Integer.valueOf(id);
@@ -144,6 +164,10 @@ public class ItemAction extends ActionSupport {
 		return SUCCESS;
 	}
 	
+	/**
+	 * 根据用户获取其发布的商品
+	 * @return
+	 */
 	public String getMy() {
 		resultMap = new HashMap<String, Object>();
 		HttpServletRequest request = ServletActionContext.getRequest();

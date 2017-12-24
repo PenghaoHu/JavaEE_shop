@@ -10,13 +10,17 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 import org.springframework.context.annotation.Scope;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 
 import com.hph.entity.User;
 import com.hph.service.UserService;
 import com.opensymphony.xwork2.ActionSupport;
 
+/**
+ * 用户相关控制器
+ * @author hupenghao
+ *
+ */
 @Controller
 @Scope("prototype")
 public class LoginAction extends ActionSupport {
@@ -56,6 +60,10 @@ public class LoginAction extends ActionSupport {
 		this.resultMap = resultMap;
 	}
 
+	/**
+	 * 用户登录控制器方法
+	 * @return
+	 */
 	public String login() {
 		List<?> result = userService.getUser(username, password);
 		resultMap = new HashMap<String, Object>();
@@ -72,7 +80,10 @@ public class LoginAction extends ActionSupport {
 		}
 
 	}
-
+	/**
+	 * 用户注册控制器方法
+	 * @return
+	 */
 	public String register() {
 		User user = new User();
 		resultMap = new HashMap<String, Object>();

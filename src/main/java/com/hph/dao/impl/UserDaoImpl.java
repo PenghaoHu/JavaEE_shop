@@ -11,6 +11,12 @@ import org.springframework.stereotype.Repository;
 import com.hph.dao.UserDao;
 import com.hph.entity.User;
 
+
+/**
+ * 用户相关--持久层实现
+ * @author hupenghao
+ *
+ */
 @Repository
 public class UserDaoImpl implements UserDao {
 

@@ -11,6 +11,11 @@ import com.hph.dao.ItemDao;
 import com.hph.entity.Item;
 import com.hph.service.ItemService;
 
+/**
+ * 商品相关--服务层实现
+ * @author hupenghao
+ *
+ */
 @Service
 @Transactional
 public class ItemServiceImpl implements ItemService {

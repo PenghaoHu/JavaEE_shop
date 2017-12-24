@@ -11,6 +11,12 @@ import org.springframework.stereotype.Repository;
 import com.hph.dao.ItemDao;
 import com.hph.entity.Item;
 
+
+/**
+ * 商品相关--持久层实现
+ * @author hupenghao
+ *
+ */
 @Repository
 public class ItemDaoImpl implements ItemDao {
 
