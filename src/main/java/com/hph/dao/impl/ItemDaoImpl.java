@@ -50,12 +50,11 @@ public class ItemDaoImpl implements ItemDao {
 
 	public void delete(Item entity) {
 		// TODO Auto-generated method stub
-
+		getCurrentSession().delete(entity);
 	}
 
-	public void deleteById(long entityId) {
+	public void deleteById(int entityId) {
 		// TODO Auto-generated method stub
-
 	}
 
 	public List<?> getMyItem(int id) {

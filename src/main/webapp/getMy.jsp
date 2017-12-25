@@ -34,7 +34,10 @@
 		});
 		$('#loadBody').html(html);
 	}
-});	
+});
+	function todetail(id){
+		window.location.href = "<%=basePath%>userItemDetail.jsp?id="+id;
+	}
 </script>
 </head>
 <body>

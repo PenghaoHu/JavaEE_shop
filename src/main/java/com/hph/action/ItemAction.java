@@ -102,8 +102,10 @@ public class ItemAction extends ActionSupport {
 	public void setId(String id) {
 		this.id = id;
 	}
+
 	/**
 	 * 添加商品
+	 * 
 	 * @return
 	 */
 	public String add() {
@@ -122,9 +124,10 @@ public class ItemAction extends ActionSupport {
 		resultMap.put("result", "success");
 		return SUCCESS;
 	}
-	
+
 	/**
 	 * 获得所有商品
+	 * 
 	 * @return
 	 */
 	public String getAll() {
@@ -135,9 +138,10 @@ public class ItemAction extends ActionSupport {
 		}
 		return SUCCESS;
 	}
-	
+
 	/**
 	 * 获得商品细节
+	 * 
 	 * @return
 	 */
 	public String getDetail() {
@@ -151,9 +155,10 @@ public class ItemAction extends ActionSupport {
 		resultMap.put("itemUsername", item_username);
 		return SUCCESS;
 	}
-	
+
 	/**
 	 * 购买商品控制方法
+	 * 
 	 * @return
 	 */
 	public String buy() {
@@ -163,9 +168,10 @@ public class ItemAction extends ActionSupport {
 		resultMap.put("result", "success");
 		return SUCCESS;
 	}
-	
+
 	/**
 	 * 根据用户获取其发布的商品
+	 * 
 	 * @return
 	 */
 	public String getMy() {
@@ -176,6 +182,38 @@ public class ItemAction extends ActionSupport {
 		int userId = Integer.valueOf(id);
 		List<?> data = itemService.getMyItem(userId);
 		resultMap.put("data", data);
+		return SUCCESS;
+	}
+
+	/**
+	 * 修改商品
+	 * 
+	 * @return
+	 */
+	public String update() {
+		resultMap = new HashMap<String, Object>();
+		Item item = itemService.getItemDetail(Integer.valueOf(id));
+		item.setName(name);
+		item.setBrand(brand);
+		item.setDescription(description);
+		item.setPrice(price);
+		item.setType(type);
+		item.setNumber(number);
+		itemService.update(item);
+		resultMap.put("result", "success");
+		return SUCCESS;
+	}
+
+	/**
+	 * 删除商品
+	 * 
+	 * @return
+	 */
+	public String delete() {
+		resultMap = new HashMap<String, Object>();
+		Item item = itemService.getItemDetail(Integer.valueOf(id));
+		itemService.delete(item);
+		resultMap.put("result", "success");
 		return SUCCESS;
 	}
 }

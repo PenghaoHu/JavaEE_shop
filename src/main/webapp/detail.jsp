@@ -45,6 +45,27 @@ $.ajax({
 function toAll(){
 	window.location.href="<%=basePath%>getAll.jsp";
 }
+
+function addCart(){
+	$.ajax({
+		async : "false",//同步请求
+		type : "post",
+		dateType : "json",
+		data : "item_id=<%=item_id%>",
+		url : "cart_addItemToCart.action",
+		success : function(data) {
+			if (data.result == "success") {
+				swal({
+					title : "添加成功",
+					icon : "success"
+				});
+			} else {
+				alert("错误");
+			}
+		}
+	});
+}
+
 function buy(){
 	$.ajax({
 		async : "false",//同步请求
@@ -125,7 +146,7 @@ function buy(){
 					<div class="col-sm-offset-3 col-sm-6" align="center"
 						style="font-size: 30px;">
 							<button type="button" class="btn btn-primary" onclick="buy()">购买</button>
-							<button class="btn btn-warning">加入购物车</button>
+							<button type="button" onclick="addCart()" class="btn btn-warning">加入购物车</button>
 							<button type="button" onclick="toAll()" class="btn btn-default">返回</button>
 					</div>
 					

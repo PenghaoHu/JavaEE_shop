@@ -93,6 +93,7 @@ function loadContent(url){
 				<ul class="sidebar-menu" id="sidebar-menu">
 					<!--<li class="header">导航菜单</li>-->
 					<li onclick="loadContent('getAll');" class="treeview"><a><i class="fa fa-coffee"></i><span>查看商品</span></a>
+					<li onclick="loadContent('getCart');" class="treeview"><a><i class="fa fa-th-large"></i><span>我的购物车</span></a>
 					<li onclick="loadContent('addItem');" class="treeview"><a><i class="fa fa-share-alt"></i><span>添加商品</span></a>
 					<li onclick="loadContent('getMy');" class="treeview"><a><i class="fa fa-th-large"></i><span>我的商品</span></a>
 				</ul>

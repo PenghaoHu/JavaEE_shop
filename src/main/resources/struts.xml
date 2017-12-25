@@ -20,6 +20,12 @@
 				<param name="root">resultMap</param>
 			</result>
 		</action>
+		
+		<action name="cart_*" class="com.hph.action.CartAction" method="{1}">
+			<result type="json">
+				<param name="root">resultMap</param>
+			</result>
+		</action>
 
 	</package>
 
